@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salah Time</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<!-- =========================
+     Navigation
+========================= -->
+
+<nav>
+
+    <a href="#home" class="logo-container">
+
+        <img src="logo.png" alt="Salah Time Logo">
+
+        <h2>Salah Time</h2>
+
+    </a>
+
+
+    <div class="nav-links">
+
+    <a href="#home" class="nav-link active">Home</a>
+
+    <a href="#prayer-times" class="nav-link">
+        Prayer Times
+    </a>
+
+    <a href="#calendar" class="nav-link">
+        Calendar
+    </a>
+    <a href="#tasbeeh" class="nav-link">
+    Tasbeeh
+</a>
+    <a href="#about" class="nav-link">
+        About
+    </a>
+
+</div>
+</nav>
+
+
+
+<!-- =========================
+     Home Section
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-decoration moon">
+        ☾
+    </div>
+
+    <div class="hero-decoration star star-one">
+        ✦
+    </div>
+
+    <div class="hero-decoration star star-two">
+        ✦
+    </div>
+
+    <div class="hero-decoration star star-three">
+        ✧
+    </div>
+
+
+    <div class="hero-content">
+
+        <p class="welcome-text">
+            ✦ Welcome to Salah Time ✦
+        </p>
+
+
+        <h1>
+            Assalamu Alaikum
+        </h1>
+
+
+        <p class="hero-description">
+
+            Your daily prayer times, Islamic calendar,
+            and essential information — all in one place.
+
+        </p>
+
+
+        <div class="islamic-quote">
+
+            "Indeed, prayer has been decreed upon
+            the believers at specified times."
+
+            <span>
+                — Quran 4:103
+            </span>
+
+        </div>
+
+
+        <div class="hero-info">
+
+            <div class="hero-location">
+
+                📍 <span class="location">Pune, India</span>
+
+            </div>
+
+
+            <div class="hero-date" id="current-date"></div>
+
+
+            <div class="hero-time" id="current-time"></div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================
+     Prayer Times Page
+========================= -->
+
+<section class="prayer-section" id="prayer-times">
+
+    <h2>
+        Today's Prayer Times
+    </h2>
+
+
+    <!-- Prayer Cards -->
+
+    <div class="prayer-container">
+
+
+        <div class="prayer-card" id="fajr-card">
+
+            <h3>Fajr</h3>
+
+            <p>5:10 AM</p>
+
+            <span class="prayer-status"></span>
+
+        </div>
+        <div class="prayer-card" id="dhuhr-card">
+
+            <h3>Dhuhr</h3>
+
+            <p>12:35 PM</p>
+
+            <span class="prayer-status"></span>
+
+        </div>
+
+
+
+        <div class="prayer-card" id="asr-card">
+
+            <h3>Asr</h3>
+
+            <p>4:05 PM</p>
+
+            <span class="prayer-status"></span>
+
+        </div>
+
+
+
+        <div class="prayer-card" id="maghrib-card">
+
+            <h3>Maghrib</h3>
+
+            <p>6:45 PM</p>
+
+            <span class="prayer-status"></span>
+
+        </div>
+
+
+
+        <div class="prayer-card" id="isha-card">
+
+            <h3>Isha</h3>
+
+            <p>8:05 PM</p>
+
+            <span class="prayer-status"></span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         Next Prayer
+    ========================= -->
+
+    <section class="next-prayer">
+
+        <h2>
+            Next Prayer
+        </h2>
+
+
+        <h3 id="next-prayer-name">
+            Asr
+        </h3>
+
+
+        <p id="next-prayer-time">
+            4:05 PM
+        </p>
+
+
+        <div id="countdown">
+            01:25:30
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         Location Selection
+    ========================= -->
+
+    <section class="location-section">
+
+        <h2>
+            Select Your Location
+        </h2>
+
+
+        <p>
+            Choose your city to view prayer times.
+        </p>
+
+
+        <select id="city-select">
+
+            <option value="Pune">
+                Pune
+            </option>
+
+            <option value="Mumbai">
+                Mumbai
+            </option>
+
+            <option value="Delhi">
+                Delhi
+            </option>
+
+            <option value="Bangalore">
+                Bangalore
+            </option>
+
+            <option value="Hyderabad">
+                Hyderabad
+            </option>
+
+        </select>
+
+    </section>
+
+</section>
+
+
+
+<!-- =========================
+     Calendar Page
+========================= -->
+<!-- =========================
+     Calendar Page
+========================= -->
+
+<section class="calendar-section" id="calendar">
+
+    <div class="calendar-content">
+
+        <p class="calendar-subtitle">
+            Islamic Hijri Calendar
+        </p>
+
+        <h2 id="hijri-month">
+            Loading...
+        </h2>
+
+
+        <!-- Month Navigation -->
+
+        <div class="calendar-navigation">
+
+            <button id="previous-month">
+                ‹
+            </button>
+
+            <span id="calendar-month-year">
+                Loading...
+            </span>
+
+            <button id="next-month">
+                ›
+            </button>
+
+        </div>
+
+
+        <!-- Weekdays -->
+
+        <div class="calendar-weekdays">
+
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+
+        </div>
+
+
+        <!-- Calendar Days -->
+
+        <div
+            class="calendar-days"
+            id="calendar-days">
+        </div>
+
+
+        <!-- Today's Information -->
+
+        <div class="calendar-info">
+
+            <p>
+                Today's Hijri Date
+            </p>
+
+            <p id="hijri-today-info">
+                --
+            </p>
+
+
+            <p>
+                Gregorian Date
+            </p>
+
+            <p id="gregorian-date">
+                --
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================
+     Tasbeeh Section
+========================= -->
+
+<section id="tasbeeh" class="tasbeeh-section">
+
+    <div class="section-heading">
+        <h2>📿 Digital Tasbeeh</h2>
+        <p>Remember Allah and keep your Zikr</p>
+    </div>
+
+    <div class="tasbeeh-card">
+
+        <h3 id="zikrName">SubhanAllah</h3>
+
+        <div class="tasbeeh-count">
+            <span id="tasbeehCount">0</span>
+            <small>/ 33</small>
+        </div>
+
+        <button id="tasbeehButton" class="tasbeeh-button">
+            TAP +1
+        </button>
+
+        <button id="tasbeehReset" class="tasbeeh-reset">
+            ↻ Reset
+        </button>
+
+        <div class="zikr-options">
+            <button class="zikr-btn active" data-zikr="SubhanAllah">
+                SubhanAllah
+            </button>
+
+            <button class="zikr-btn" data-zikr="Alhamdulillah">
+                Alhamdulillah
+            </button>
+
+            <button class="zikr-btn" data-zikr="Allahu Akbar">
+                Allahu Akbar
+            </button>
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================
+     About Page
+========================= -->
+
+<!-- =========================
+     About Page
+========================= -->
+
+<section class="about-section" id="about">
+
+    <div class="about-content">
+
+       <!-- <p class="about-subtitle">
+            ABOUT THE PROJECT
+        </p>-->
+
+        <h2>
+            About Salah Time
+        </h2>
+
+        <p class="about-intro">
+            Salah Time is a simple and user-friendly Islamic
+            prayer time website designed to help users easily
+            view daily prayer times, check the next Salah,
+            and explore the Islamic Hijri calendar.
+        </p>
+
+<p>
+    <strong>Note:</strong> The prayer times displayed on this website are for demonstration purposes only. 
+    This project is developed as a frontend web application using HTML, CSS, and JavaScript, and it is not connected 
+    to any live or verified prayer-time service. Therefore, the displayed Salah times may not be accurate for actual prayer. 
+    For accurate prayer times, users should refer to their local mosque or a reliable Islamic prayer-time service.
+</p>
+        <div class="about-features">
+
+            <div class="about-card">
+
+                <div class="about-icon">
+                    🕌
+                </div>
+
+                <h3>
+                    Prayer Times
+                </h3>
+
+                <p>
+                    View daily Fajr, Dhuhr, Asr,
+                    Maghrib and Isha prayer times.
+                </p>
+
+            </div>
+
+
+            <div class="about-card">
+
+                <div class="about-icon">
+                    📅
+                </div>
+
+                <h3>
+                    Hijri Calendar
+                </h3>
+
+                <p>
+                    Explore the Islamic calendar
+                    with Hijri months and dates.
+                </p>
+
+            </div>
+
+
+            <div class="about-card">
+
+                <div class="about-icon">
+                    📍
+                </div>
+
+                <h3>
+                    City Selection
+                </h3>
+
+                <p>
+                    Select your city to view
+                    its corresponding prayer times.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="about-creator">
+
+            <p>
+                Developed as a College Project
+            </p>
+
+            <h3>
+                By: Hafiz Muddassir
+            </h3>
+
+            <span>
+                Frontend Web Application
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     Footer
+========================= -->
+<!-- =========================
+     Footer
+========================= -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <div class="footer-logo">
+
+
+            <h3>
+                Salah Time
+            </h3>
+
+        </div>
+
+
+        <p class="footer-description">
+
+            Your simple companion for daily
+            prayer times and the Islamic calendar.
+
+        </p>
+
+
+        <div class="footer-line"></div>
+
+
+        <p class="footer-copyright">
+
+            ©️ 2026 Salah Time. All rights reserved.
+
+        </p>
+
+    </div>
+
+</footer>
+<!-- =========================
+     Back To Top
+========================= -->
+
+<button id="back-to-top">
+    ^
+</button>
+
+
+
+<!-- =========================
+     JavaScript
+========================= -->
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>

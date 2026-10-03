@@ -1,0 +1,2132 @@
+/* =========================================================
+   GENERAL
+========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f8f5;
+    color: #222;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 16px 35px;
+
+    background: linear-gradient(
+        135deg,
+        #033c36,
+        #056b50
+    );
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Logo */
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    text-decoration: none;
+    color: white;
+}
+
+.logo-container img {
+    width: 42px;
+    height: 42px;
+
+    object-fit: contain;
+
+    transform: scale(1.7);
+    filter: brightness(0) invert(1);
+    transition: 0.3s;
+}
+
+.logo-container img:hover {
+    transform: scale(1.8);
+}
+
+.logo-container h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+
+/* Navigation Links */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+
+    margin-left: 28px;
+
+    color: white;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.nav-links a.active {
+    color: #f4d35e;
+    font-weight: bold;
+}
+
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: #ffd166;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   HOME / HERO
+========================================================= */
+
+.hero {
+    min-height: calc(100vh - 75px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #064e3b,
+            #087f5b,
+            #0b9b70
+        );
+
+    color: white;
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Decorative circles */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    background-color: rgba(255, 255, 255, 0.06);
+
+    top: -120px;
+    left: -100px;
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    background-color: rgba(255, 209, 102, 0.08);
+
+    bottom: -120px;
+    right: -80px;
+}
+
+
+/* Hero Content */
+
+.hero-content {
+    max-width: 850px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.welcome-text {
+    font-size: 18px;
+
+    letter-spacing: 2px;
+
+    color: #ffd166;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 58px;
+
+    margin: 0 0 20px;
+
+    letter-spacing: 1px;
+}
+
+.hero-description {
+    max-width: 650px;
+
+    margin: auto;
+
+    font-size: 20px;
+
+    line-height: 1.7;
+
+    color: #f1fdf7;
+}
+
+
+/* Hero Information */
+
+.hero-info {
+    margin-top: 40px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 30px;
+
+    flex-wrap: wrap;
+}
+
+.hero-location,
+.hero-date,
+.hero-time {
+    padding: 12px 20px;
+
+    border-radius: 30px;
+
+    background-color: rgba(
+        255,
+        255,
+        255,
+        0.12
+    );
+
+    border: 1px solid rgba(
+        255,
+        255,
+        255,
+        0.2
+    );
+
+    backdrop-filter: blur(5px);
+}
+
+.hero-time {
+    font-size: 22px;
+
+    font-weight: bold;
+
+    color: #ffd166;
+}
+
+
+/* =========================================================
+   ISLAMIC HERO DECORATIONS
+========================================================= */
+
+.hero .moon {
+    position: absolute;
+
+    top: 80px;
+    right: 10%;
+
+    font-size: 110px;
+
+    color: #ffd166;
+
+    opacity: 0.18;
+
+    transform: rotate(-20deg);
+
+    z-index: 1;
+}
+
+.hero-decoration.star {
+    position: absolute;
+
+    color: #ffd166;
+
+    opacity: 0.55;
+
+    z-index: 1;
+}
+
+.star-one {
+    top: 22%;
+    left: 12%;
+
+    font-size: 28px;
+}
+
+.star-two {
+    top: 65%;
+    right: 18%;
+
+    font-size: 22px;
+}
+
+.star-three {
+    top: 35%;
+    right: 7%;
+
+    font-size: 18px;
+}
+
+
+/* Islamic Quote */
+
+.islamic-quote {
+    max-width: 650px;
+
+    margin: 30px auto 0;
+
+    padding: 18px 25px;
+
+    border-left: 3px solid #ffd166;
+    border-right: 3px solid #ffd166;
+
+    color: #f8fff9;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    font-style: italic;
+
+    background-color: rgba(
+        255,
+        255,
+        255,
+        0.06
+    );
+
+    border-radius: 12px;
+}
+
+.islamic-quote span {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #ffd166;
+
+    font-size: 14px;
+
+    font-style: normal;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   PRAYER TIMES
+========================================================= */
+
+.prayer-section {
+    text-align: center;
+
+    padding: 80px 40px;
+}
+
+.prayer-section h2 {
+    font-size: 34px;
+
+    margin-bottom: 40px;
+
+    color: #075e54;
+}
+
+.prayer-container {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+}
+
+
+/* Prayer Cards */
+
+.prayer-card {
+    width: 175px;
+
+    padding: 30px 20px;
+
+    border-radius: 18px;
+
+    background-color: white;
+
+    border: 2px solid #d9eee6;
+
+    box-shadow:
+        0 6px 18px rgba(
+            0,
+            0,
+            0,
+            0.08
+        );
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s,
+        border 0.3s;
+}
+
+
+/* Card top colours */
+
+#fajr-card {
+    border-top: 5px solid #4dabf7;
+}
+
+#sunrise-card {
+    border-top: 5px solid #ffa94d;
+}
+
+#dhuhr-card {
+    border-top: 5px solid #20c997;
+}
+
+#asr-card {
+    border-top: 5px solid #845ef7;
+}
+
+#maghrib-card {
+    border-top: 5px solid #f06595;
+}
+
+#isha-card {
+    border-top: 5px solid #495057;
+}
+
+
+.prayer-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 12px 25px rgba(
+            0,
+            0,
+            0,
+            0.14
+        );
+}
+
+.prayer-card h3 {
+    margin: 0 0 12px;
+
+    font-size: 22px;
+
+    color: #075e54;
+}
+
+.prayer-card p {
+    margin: 0;
+
+    font-size: 20px;
+
+    font-weight: bold;
+}
+
+
+/* Current Prayer */
+
+.prayer-card.current-prayer {
+    border: 3px solid #d4a017;
+
+    transform: scale(1.06);
+
+    box-shadow:
+        0 10px 28px rgba(
+            212,
+            160,
+            23,
+            0.45
+        );
+}
+
+
+/* Prayer Status */
+
+.prayer-status {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding: 5px 12px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+.prayer-status.upcoming {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.prayer-status.current {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.prayer-status.completed {
+    background-color: #e2e3e5;
+    color: #383d41;
+}
+
+
+/* =========================================================
+   NEXT PRAYER
+========================================================= */
+
+.next-prayer {
+    text-align: center;
+
+    padding: 65px 20px;
+
+    max-width: 700px;
+
+    margin: 20px auto;
+
+    background-color: #e9f7f1;
+
+    border-radius: 20px;
+
+    border: 1px solid #cceadd;
+}
+
+.next-prayer h2 {
+    font-size: 30px;
+
+    color: #075e54;
+}
+
+.next-prayer h3 {
+    font-size: 34px;
+
+    margin: 12px 0;
+
+    color: #087f5b;
+}
+
+.next-prayer p {
+    font-size: 20px;
+
+    margin: 10px 0;
+}
+
+#countdown {
+    font-size: 42px;
+
+    font-weight: bold;
+
+    margin-top: 20px;
+
+    letter-spacing: 2px;
+
+    color: #075e54;
+}
+
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.location-section {
+    text-align: center;
+
+    padding: 70px 20px;
+}
+
+.location-section h2 {
+    font-size: 30px;
+
+    color: #075e54;
+}
+
+.location-section p {
+    font-size: 17px;
+
+    margin-bottom: 25px;
+}
+
+#city-select {
+    padding: 13px 22px;
+
+    font-size: 16px;
+
+    border-radius: 10px;
+
+    border: 2px solid #b7dacc;
+
+    background-color: white;
+
+    cursor: pointer;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+#city-select:hover,
+#city-select:focus {
+    border-color: #087f5b;
+
+    box-shadow:
+        0 0 0 3px rgba(
+            8,
+            127,
+            91,
+            0.12
+        );
+}
+
+
+/* =========================================================
+   HIJRI CALENDAR
+========================================================= */
+
+.calendar-section {
+    min-height: 600px;
+
+    padding: 90px 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8fff9,
+            #fffdf5
+        );
+}
+
+.calendar-content {
+    max-width: 750px;
+
+    margin: auto;
+}
+
+.calendar-subtitle {
+    color: #d4a017;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 12px;
+}
+
+.calendar-section h2 {
+    color: #075e54;
+
+    font-size: 38px;
+
+    margin-bottom: 35px;
+}
+
+
+/* Calendar Navigation */
+
+.calendar-navigation {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    margin-bottom: 25px;
+}
+
+.calendar-navigation button {
+    width: 42px;
+
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background-color: #075e54;
+
+    color: white;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.calendar-navigation button:hover {
+    background-color: #d4a017;
+
+    transform: scale(1.08);
+}
+
+#calendar-month-year {
+    min-width: 180px;
+
+    color: #075e54;
+
+    font-size: 20px;
+
+    font-weight: bold;
+}
+
+
+/* Weekdays */
+
+.calendar-weekdays {
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, 1fr);
+
+    gap: 8px;
+
+    max-width: 650px;
+
+    margin: auto;
+}
+
+.calendar-weekdays div {
+    padding: 12px 5px;
+
+    color: white;
+
+    background-color: #075e54;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    font-size: 14px;
+}
+
+
+/* Calendar Days */
+
+.calendar-days {
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, 1fr);
+
+    gap: 8px;
+
+    max-width: 650px;
+
+    margin: 8px auto 0;
+}
+
+.calendar-day,
+.calendar-empty {
+    min-height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background-color: white;
+
+    border: 1px solid #d9eee6;
+
+    font-size: 17px;
+
+    color: #075e54;
+
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+.calendar-day:hover {
+    background-color: #fff4cf;
+
+    border-color: #d4a017;
+
+    transform: translateY(-2px);
+}
+
+.calendar-day.today {
+    background-color: #075e54;
+
+    color: white;
+
+    border: 3px solid #ffd166;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 5px 15px rgba(
+            0,
+            0,
+            0,
+            0.15
+        );
+}
+
+
+/* Calendar Information */
+
+.calendar-info {
+    max-width: 650px;
+
+    margin: 35px auto 0;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    background-color: white;
+
+    border: 1px solid #d9eee6;
+
+    box-shadow:
+        0 6px 18px rgba(
+            0,
+            0,
+            0,
+            0.07
+        );
+}
+
+.calendar-info p {
+    margin: 8px;
+
+    color: #555;
+
+    font-size: 16px;
+}
+
+.calendar-info p:last-child {
+    color: #075e54;
+
+    font-size: 20px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-section {
+    min-height: 650px;
+
+    padding: 90px 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f4f8f5,
+            #fffdf5
+        );
+}
+
+.about-content {
+    max-width: 1000px;
+
+    margin: auto;
+}
+
+.about-subtitle {
+    margin: 0 0 10px;
+
+    color: #d4a017;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.about-section h2 {
+    margin: 0 0 20px;
+
+    font-size: 38px;
+
+    color: #075e54;
+}
+
+.about-intro {
+    max-width: 720px;
+
+    margin: 0 auto 45px;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    color: #555;
+}
+
+
+/* About Cards */
+
+.about-features {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+}
+
+.about-card {
+    width: 280px;
+
+    padding: 30px 22px;
+
+    background-color: white;
+
+    border: 1px solid #d9eee6;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 6px 18px rgba(
+            0,
+            0,
+            0,
+            0.08
+        );
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+}
+
+.about-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 12px 25px rgba(
+            0,
+            0,
+            0,
+            0.12
+        );
+}
+
+.about-icon {
+    width: 60px;
+    height: 60px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: #e9f7f1;
+
+    font-size: 28px;
+}
+
+.about-card h3 {
+    margin: 0 0 12px;
+
+    font-size: 21px;
+
+    color: #075e54;
+}
+
+.about-card p {
+    margin: 0;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    color: #555;
+}
+
+
+/* Creator */
+
+.about-creator {
+    max-width: 650px;
+
+    margin: 45px auto 0;
+
+    padding: 25px 20px;
+
+    border-top: 1px solid #cceadd;
+}
+
+.about-creator p {
+    margin: 0 0 8px;
+
+    font-size: 14px;
+
+    color: #777;
+}
+
+.about-creator h3 {
+    margin: 0 0 6px;
+
+    font-size: 20px;
+
+    color: #075e54;
+}
+
+.about-creator span {
+    font-size: 14px;
+
+    color: #087f5b;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    padding: 32px 20px 18px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #064e45,
+            #075e54
+        );
+
+    color: white;
+}
+
+.footer-content {
+    max-width: 800px;
+
+    margin: auto;
+}
+
+.footer-logo {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-bottom: 10px;
+}
+
+.footer-logo img {
+    width: 38px;
+    height: 38px;
+
+    object-fit: contain;
+}
+
+.footer-logo h3 {
+    margin: 0;
+
+    font-size: 22px;
+
+    color: #f4d35e;
+}
+
+.footer-description {
+    max-width: 500px;
+
+    margin: 0 auto 18px;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    color: #dceee9;
+}
+
+.footer-line {
+    width: 70px;
+
+    height: 2px;
+
+    margin: 0 auto 15px;
+
+    background-color: #d4a017;
+}
+
+.footer-copyright {
+    margin: 0;
+
+    font-size: 12px;
+
+    color: #b9d8d1;
+}
+
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+#back-to-top {
+    position: fixed;
+
+    bottom: 25px;
+    right: 25px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background-color: #087f5b;
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    display: none;
+
+    z-index: 999;
+
+    transition: 0.3s;
+}
+
+#back-to-top:hover {
+    background-color: #064e3b;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   MOBILE DESIGN
+   Completely optimized for phones
+========================================================= */
+
+@media (max-width: 600px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    body {
+        min-width: 0;
+    }
+
+
+    /* -----------------------------------------------------
+       MOBILE NAVIGATION
+    ----------------------------------------------------- */
+
+    nav {
+        width: 100%;
+
+        padding: 13px 12px;
+
+        flex-direction: column;
+
+        gap: 12px;
+
+        background:
+            linear-gradient(
+                160deg,
+                #043f35,
+                #075e54,
+                #087f5b
+            );
+    }
+
+    .logo-container {
+        gap: 9px;
+
+        justify-content: center;
+    }
+
+    .logo-container img {
+        width: 36px;
+        height: 36px;
+
+        transform: scale(1.35);
+    }
+
+    .logo-container img:hover {
+        transform: scale(1.35);
+    }
+
+    .logo-container h2 {
+        font-size: 21px;
+    }
+
+    .nav-links {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(5, 1fr);
+
+        gap: 5px;
+    }
+
+    .nav-links a {
+        margin: 0;
+
+        padding: 9px 4px;
+
+        text-align: center;
+
+        font-size: 12px;
+
+        border-radius: 9px;
+
+        white-space: nowrap;
+    }
+
+    .nav-links a.active {
+        background-color: rgba(
+            255,
+            209,
+            102,
+            0.14
+        );
+
+        color: #ffd166;
+    }
+
+
+    /* -----------------------------------------------------
+       MOBILE HERO
+    ----------------------------------------------------- */
+
+    .hero {
+        width: 100%;
+
+        min-height: auto;
+
+        padding: 65px 16px 60px;
+
+        background:
+            radial-gradient(
+                circle at top right,
+                rgba(255, 209, 102, 0.13),
+                transparent 30%
+            ),
+            linear-gradient(
+                160deg,
+                #033c30,
+                #075e54,
+                #07845e
+            );
+    }
+
+    .hero-content {
+        width: 100%;
+
+        max-width: 390px;
+    }
+
+    .welcome-text {
+        font-size: 13px;
+
+        letter-spacing: 1.2px;
+
+        margin-bottom: 16px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+
+        line-height: 1.2;
+
+        margin-bottom: 16px;
+    }
+
+    .hero-description {
+        max-width: 350px;
+
+        font-size: 15px;
+
+        line-height: 1.65;
+    }
+
+    .islamic-quote {
+        width: 100%;
+
+        max-width: 350px;
+
+        margin: 24px auto 0;
+
+        padding: 16px 14px;
+
+        font-size: 13px;
+
+        line-height: 1.65;
+
+        border-left: 2px solid #ffd166;
+        border-right: 2px solid #ffd166;
+
+        background-color: rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+        box-shadow:
+            0 8px 25px rgba(
+                0,
+                0,
+                0,
+                0.08
+            );
+    }
+
+    .islamic-quote span {
+        font-size: 12px;
+    }
+
+    .hero-info {
+        width: 100%;
+
+        margin-top: 26px;
+
+        gap: 9px;
+
+        flex-direction: column;
+    }
+
+    .hero-location,
+    .hero-date,
+    .hero-time {
+        width: 100%;
+
+        max-width: 320px;
+
+        padding: 11px 14px;
+
+        font-size: 14px;
+    }
+
+    .hero-time {
+        font-size: 19px;
+    }
+
+
+    /* Decorations */
+
+    .hero .moon {
+        top: 38px;
+
+        right: 4%;
+
+        font-size: 75px;
+
+        opacity: 0.13;
+    }
+
+    .star-one {
+        top: 17%;
+
+        left: 6%;
+
+        font-size: 19px;
+    }
+
+    .star-two {
+        top: 67%;
+
+        right: 8%;
+
+        font-size: 16px;
+    }
+
+    .star-three {
+        top: 39%;
+
+        right: 5%;
+
+        font-size: 13px;
+    }
+
+
+    /* -----------------------------------------------------
+       PRAYER SECTION
+    ----------------------------------------------------- */
+
+    .prayer-section {
+        width: 100%;
+
+        padding: 55px 12px 45px;
+
+        background:
+            linear-gradient(
+                180deg,
+                #f4fbf7,
+                #ffffff
+            );
+    }
+
+    .prayer-section h2 {
+        font-size: 27px;
+
+        margin-bottom: 28px;
+    }
+
+    .prayer-container {
+        width: 100%;
+
+        max-width: 380px;
+
+        margin: auto;
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 14px;
+    }
+
+    .prayer-card {
+        width: 100%;
+
+        min-width: 0;
+
+        padding: 23px 8px 20px;
+
+        border-radius: 17px;
+
+        background:
+            linear-gradient(
+                145deg,
+                #ffffff,
+                #f8fcfa
+            );
+
+        box-shadow:
+            0 7px 18px rgba(
+                0,
+                80,
+                60,
+                0.09
+            );
+    }
+
+    .prayer-card:hover {
+        transform: translateY(-3px);
+    }
+
+    .prayer-card.current-prayer {
+        transform: scale(1.025);
+
+        border-width: 2px;
+
+        box-shadow:
+            0 9px 24px rgba(
+                212,
+                160,
+                23,
+                0.28
+            );
+    }
+
+    .prayer-card.current-prayer:hover {
+        transform: scale(1.025);
+    }
+
+    .prayer-card h3 {
+        font-size: 18px;
+
+        margin-bottom: 10px;
+    }
+
+    .prayer-card p {
+        font-size: 17px;
+    }
+
+    .prayer-status {
+        margin-top: 12px;
+
+        padding: 5px 8px;
+
+        font-size: 10px;
+
+        white-space: nowrap;
+    }
+
+
+    /* -----------------------------------------------------
+       NEXT PRAYER
+    ----------------------------------------------------- */
+
+    .next-prayer {
+        width: calc(100% - 8px);
+
+        max-width: 380px;
+
+        margin: 20px auto;
+
+        padding: 35px 14px;
+
+        border-radius: 20px;
+
+        background:
+            linear-gradient(
+                145deg,
+                #e5f7ef,
+                #f8fff9
+            );
+
+        border: 1px solid #bfe3d3;
+
+        box-shadow:
+            0 8px 25px rgba(
+                0,
+                90,
+                65,
+                0.08
+            );
+    }
+
+    .next-prayer h2 {
+        font-size: 23px;
+
+        margin: 0 0 10px;
+    }
+
+    .next-prayer h3 {
+        font-size: 29px;
+
+        margin: 8px 0;
+    }
+
+    .next-prayer p {
+        font-size: 18px;
+    }
+
+    #countdown {
+        font-size: 29px;
+
+        letter-spacing: 1px;
+
+        margin-top: 18px;
+
+        overflow-wrap: anywhere;
+
+        color: #064e3b;
+    }
+
+
+    /* -----------------------------------------------------
+       LOCATION
+    ----------------------------------------------------- */
+
+    .location-section {
+        width: 100%;
+
+        padding: 45px 15px 55px;
+    }
+
+    .location-section h2 {
+        font-size: 25px;
+
+        margin-bottom: 10px;
+    }
+
+    .location-section p {
+        font-size: 14px;
+
+        line-height: 1.6;
+
+        margin-bottom: 20px;
+    }
+
+    #city-select {
+        width: 100%;
+
+        max-width: 310px;
+
+        padding: 13px 16px;
+
+        font-size: 15px;
+
+        border-radius: 12px;
+    }
+
+
+    /* -----------------------------------------------------
+       CALENDAR
+    ----------------------------------------------------- */
+
+    .calendar-section {
+        width: 100%;
+
+        min-height: auto;
+
+        padding: 55px 10px 60px;
+
+        background:
+            linear-gradient(
+                145deg,
+                #f5fff9,
+                #fffdf5
+            );
+    }
+
+    .calendar-content {
+        width: 100%;
+
+        max-width: 390px;
+
+        margin: auto;
+    }
+
+    .calendar-subtitle {
+        font-size: 12px;
+
+        letter-spacing: 1.5px;
+
+        margin-bottom: 9px;
+    }
+
+    .calendar-section h2 {
+        font-size: 27px;
+
+        margin-bottom: 25px;
+    }
+
+    .calendar-navigation {
+        width: 100%;
+
+        gap: 8px;
+
+        margin-bottom: 18px;
+    }
+
+    .calendar-navigation button {
+        flex-shrink: 0;
+
+        width: 38px;
+        height: 38px;
+
+        font-size: 22px;
+    }
+
+    #calendar-month-year {
+        min-width: 0;
+
+        width: 150px;
+
+        font-size: 16px;
+
+        white-space: nowrap;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+    }
+
+    .calendar-weekdays,
+    .calendar-days {
+        width: 100%;
+
+        max-width: 370px;
+
+        gap: 4px;
+    }
+
+    .calendar-weekdays div {
+        min-width: 0;
+
+        padding: 9px 1px;
+
+        font-size: 10px;
+
+        border-radius: 6px;
+    }
+
+    .calendar-day,
+    .calendar-empty {
+        min-width: 0;
+
+        min-height: 43px;
+
+        padding: 3px;
+
+        font-size: 13px;
+
+        border-radius: 7px;
+    }
+
+    .calendar-day.today {
+        border-width: 2px;
+
+        box-shadow:
+            0 4px 10px rgba(
+                0,
+                0,
+                0,
+                0.12
+            );
+    }
+
+    .calendar-info {
+        width: 100%;
+
+        margin-top: 25px;
+
+        padding: 15px 10px;
+
+        border-radius: 14px;
+    }
+
+    .calendar-info p {
+        font-size: 14px;
+
+        margin: 7px;
+    }
+
+    .calendar-info p:last-child {
+        font-size: 17px;
+    }
+
+
+    /* -----------------------------------------------------
+       ABOUT
+    ----------------------------------------------------- */
+
+    .about-section {
+        width: 100%;
+
+        min-height: auto;
+
+        padding: 60px 15px;
+
+        background:
+            linear-gradient(
+                145deg,
+                #f4f9f6,
+                #fffdf5
+            );
+    }
+
+    .about-content {
+        width: 100%;
+
+        max-width: 390px;
+    }
+
+    .about-section h2 {
+        font-size: 27px;
+
+        line-height: 1.25;
+
+        margin-bottom: 16px;
+    }
+
+    .about-intro {
+        max-width: 350px;
+
+        margin: 0 auto 35px;
+
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+    .about-content > p:not(.about-intro) {
+        max-width: 350px;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        font-size: 14px;
+
+        line-height: 1.7;
+
+        color: #555;
+    }
+
+    .about-features {
+        width: 100%;
+
+        gap: 15px;
+
+        margin-top: 30px;
+
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .about-card {
+        width: 100%;
+
+        max-width: 350px;
+
+        padding: 25px 18px;
+
+        border-radius: 17px;
+    }
+
+    .about-card:hover {
+        transform: translateY(-3px);
+    }
+
+    .about-icon {
+        width: 55px;
+        height: 55px;
+
+        font-size: 25px;
+
+        margin-bottom: 15px;
+    }
+
+    .about-card h3 {
+        font-size: 19px;
+    }
+
+    .about-card p {
+        font-size: 14px;
+
+        line-height: 1.65;
+    }
+
+    .about-creator {
+        width: 100%;
+
+        margin-top: 30px;
+
+        padding: 22px 15px;
+    }
+
+    .about-creator h3 {
+        font-size: 19px;
+    }
+
+
+    /* -----------------------------------------------------
+       FOOTER
+    ----------------------------------------------------- */
+
+    footer {
+        width: 100%;
+
+        padding: 28px 15px 16px;
+
+        background:
+            linear-gradient(
+                160deg,
+                #043f35,
+                #075e54
+            );
+    }
+
+    .footer-logo {
+        gap: 8px;
+
+        margin-bottom: 10px;
+    }
+
+    .footer-logo img {
+        width: 34px;
+        height: 34px;
+    }
+
+    .footer-logo h3 {
+        font-size: 19px;
+    }
+
+    .footer-description {
+        max-width: 310px;
+
+        font-size: 13px;
+
+        line-height: 1.6;
+
+        margin-bottom: 15px;
+    }
+
+    .footer-line {
+        width: 55px;
+
+        margin-bottom: 12px;
+    }
+
+    .footer-copyright {
+        font-size: 11px;
+
+        line-height: 1.5;
+    }
+
+
+    /* -----------------------------------------------------
+       BACK TO TOP
+    ----------------------------------------------------- */
+
+    #back-to-top {
+        width: 40px;
+        height: 40px;
+
+        right: 14px;
+        bottom: 14px;
+
+        font-size: 18px;
+    }
+
+
+    /* -----------------------------------------------------
+       MOBILE TOUCH / TEXT
+    ----------------------------------------------------- */
+
+    button,
+    select,
+    .nav-links a {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+        overflow-wrap: break-word;
+    }
+}
+
+
+/* =========================
+   Tasbeeh Section
+========================= */
+
+.tasbeeh-section {
+    padding: 70px 20px;
+    background: #f4f8f5;
+    text-align: center;
+}
+
+.tasbeeh-section .section-heading {
+    margin-bottom: 30px;
+}
+
+.tasbeeh-section .section-heading h2 {
+    color: #075e54;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.tasbeeh-section .section-heading p {
+    color: #666;
+    font-size: 16px;
+}
+
+.tasbeeh-card {
+    max-width: 500px;
+    margin: auto;
+    padding: 35px 25px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+}
+
+.tasbeeh-card h3 {
+    color: #075e54;
+    font-size: 26px;
+    margin-bottom: 25px;
+}
+
+.tasbeeh-count {
+    margin-bottom: 25px;
+}
+
+#tasbeehCount {
+    display: inline-block;
+    font-size: 60px;
+    font-weight: bold;
+    color: #075e54;
+}
+
+.tasbeeh-count small {
+    font-size: 20px;
+    color: #777;
+}
+
+
+/* Main Tap Button */
+
+.tasbeeh-button {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    border: 8px solid #ffd166;
+    background: #087f5b;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.tasbeeh-button:hover {
+    transform: scale(1.04);
+}
+
+.tasbeeh-button:active {
+    transform: scale(0.95);
+}
+
+
+/* Reset Button */
+
+.tasbeeh-reset {
+    display: block;
+    margin: 22px auto;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 20px;
+    background: #eeeeee;
+    color: #444;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.tasbeeh-reset:hover {
+    background: #dddddd;
+}
+
+
+/* Zikr Buttons */
+
+.zikr-options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.zikr-btn {
+    padding: 10px 15px;
+    border: 1px solid #087f5b;
+    border-radius: 20px;
+    background: white;
+    color: #075e54;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.zikr-btn:hover {
+    background: #e8f5ef;
+}
+
+.zikr-btn.active {
+    background: #087f5b;
+    color: white;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .tasbeeh-section {
+        padding: 50px 15px;
+    }
+
+    .tasbeeh-section .section-heading h2 {
+        font-size: 26px;
+    }
+
+    .tasbeeh-card {
+        padding: 30px 15px;
+    }
+
+    .tasbeeh-button {
+        width: 150px;
+        height: 150px;
+        font-size: 21px;
+    }
+
+    #tasbeehCount {
+        font-size: 50px;
+    }
+
+}
